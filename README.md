@@ -34,41 +34,43 @@ cd vein-visualization
 ### Train  
 
 
-#### Dataset preparation
+#### Train Dataset preparation:
 - The model requires 50x50x25 patches sampled in `.h5` from augmented dataset for the training process.
 - You can either use our `.h5` files containg sampled patches or you can sample your own patches and save them `.h5` file.
 - Original Augmented dataset in `.mat` format for the Fruit Processing and Material Identification is available at [Fruit](https://drive.google.com/drive/folders/1BI6J3aJiuqpXMFlNwYt3O0JLP3PHW4zD?usp=sharing) and [Material](https://drive.google.com/drive/folders/1LBvEqoJuQ3o9ryulqWbktEmI3K-g-K_1?usp=sharing)
 - You can should put these two folders in `./train/Data` folder and use `save_h5_data_fruit.m` and `save_h5_data_material.m` for making `.h5` files. However, we recommend you to use our `.h5` files instead of rebuilding them.
 - Training and Validation `.h5` files for the both Fruit Processing and Material Identification categories are available at: [Fruit Processing Training](https://drive.google.com/file/d/1qQGmerp7RU6igRSg7gUWX62EvTj1YYsS/view?usp=sharing), [Fruit Processing Validation](https://drive.google.com/file/d/1EvY3f-Rbm2FYMmw7SWA30pbO4WyTWXqz/view?usp=sharing), [Material Identification Training](https://drive.google.com/file/d/1fhotXS85J7Bt1oH8AHxa4zNt9fon1wJt/view?usp=sharing), and [FMaterial Identification Validation](https://drive.google.com/file/d/1_hZJZIYA2yI0v2WRkpIFpur6ae8ldCup/view?usp=sharing).
-- Move downloaded dataset folder to root (vein-visualization/dataset)
-- Increase the training data using augmentation techniques (rotation and flipping). The matlab file `./train/augment_data.m` is used to perform augmentaion.
-- The dataset is stored in HDF5 (`.h5`) file for training process. The matlab file `./train/generate_paired_rgb_nbands.m` is used to generate `train.h5` and `valid.h5` dataset files.
+- Move these downloaded `.h5` files to `./train/Data` folder
 
 
-
-The training and testing codes are present in `./train/` and `./test/` folders respectively. The model architecture is present in `resblock.py` file.
-- Train a model:
+#### Train the model:
+The training and testing codes are present in `./train/` folder. The model architecture is present in `resblock.py` file.
+- Train a model for the Fruit Processing Application:
 ```bash
-#!./train/train.py
-python train.py
+#!./train/train_fruit.py
+python train_fruit.py
 ```
+
+
+- Train a model for the Material Identification Application:
+```bash
+#!./train/train_material.py
+python train_material.py
+```
+
 - The trained models will be stored in `./train/models/` folder with log files. 
 
 
+#### Test Dataset preparation:
+- Test Dataset for Fruit Processing Application is available at: 
+- - Test Dataset for Fruit Processing Application is available at:
 
-
-
-
-
-
-
-
-### Test the model:
+#### Test the model:
 ```bash
 #!./test/evaluate_model.py
 python evaluate_model.py
 ```
-- The pre-trained models are present in `./test/models/`. The model can be evaluated on the testing dataset present in `./dataset/test_data/rgb/`. The test results will be saved to the folder: `./dataset/test_data/inference/`.
+- The pre-trained models for both applications are present in `./test/models/`. The model can be evaluated on the testing dataset present in `./dataset/test_data/rgb/`. The test results will be saved to the folder: `./dataset/test_data/inference/`.
 
 
 
