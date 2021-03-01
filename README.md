@@ -16,24 +16,36 @@ Hyperspectral imaging provides rich information across many wavelengths of the c
 ### Prerequisites
 - Linux or macOS
 - Python 3
+- Pytorch
 - NVIDIA GPU + CUDA CuDNN
 - MATLAB
 
 ### Installation
 - Clone this repo:
 ```bash
-git clone https://github.com/nehasharma512/vein-visualization.git
+git clone https://github.com/pazadimo/HS_In_Diverse_Illuminations.git
 cd vein-visualization
 ```
 - Install [PyTorch](http://pytorch.org) and other dependencies.
   - For Conda users, you can create a new Conda environment using `conda env create -f environment.yml`.
 
-### Dataset preparation
+
+
+### Train  
+
+
+#### Dataset preparation
+- The model requires 50x50x25 patches sampled in `.h5` from augmented dataset for the training process.
+- You can either use our `.h5` files containg sampled patches or you can sample your own patches and save them `.h5` file.
+- Original Augmented dataset in `.mat` format for the Fruit Processing and Material Identification is available at [Fruit](https://drive.google.com/drive/folders/1BI6J3aJiuqpXMFlNwYt3O0JLP3PHW4zD?usp=sharing) and [Material](https://drive.google.com/drive/folders/1LBvEqoJuQ3o9ryulqWbktEmI3K-g-K_1?usp=sharing)
+- You can should put these two folders in `./train/Data` folder and use `save_h5_data_fruit.m` and `save_h5_data_material.m` for making `.h5` files. However, we recommend you to use our `.h5` files instead of rebuilding them.
+- Training and Validation `.h5` files for the both Fruit Processing and Material Identification categories are available at: [Fruit Processing Training](https://drive.google.com/file/d/1qQGmerp7RU6igRSg7gUWX62EvTj1YYsS/view?usp=sharing), [Fruit Processing Validation](https://drive.google.com/file/d/1EvY3f-Rbm2FYMmw7SWA30pbO4WyTWXqz/view?usp=sharing), [Material Identification Training](https://drive.google.com/file/d/1fhotXS85J7Bt1oH8AHxa4zNt9fon1wJt/view?usp=sharing), and [FMaterial Identification Validation](https://drive.google.com/file/d/1_hZJZIYA2yI0v2WRkpIFpur6ae8ldCup/view?usp=sharing).
 - Move downloaded dataset folder to root (vein-visualization/dataset)
 - Increase the training data using augmentation techniques (rotation and flipping). The matlab file `./train/augment_data.m` is used to perform augmentaion.
 - The dataset is stored in HDF5 (`.h5`) file for training process. The matlab file `./train/generate_paired_rgb_nbands.m` is used to generate `train.h5` and `valid.h5` dataset files.
 
-### Train/Test  
+
+
 The training and testing codes are present in `./train/` and `./test/` folders respectively. The model architecture is present in `resblock.py` file.
 - Train a model:
 ```bash
@@ -42,37 +54,29 @@ python train.py
 ```
 - The trained models will be stored in `./train/models/` folder with log files. 
 
-- Test the model:
+
+
+
+
+
+
+
+
+
+### Test the model:
 ```bash
 #!./test/evaluate_model.py
 python evaluate_model.py
 ```
 - The pre-trained models are present in `./test/models/`. The model can be evaluated on the testing dataset present in `./dataset/test_data/rgb/`. The test results will be saved to the folder: `./dataset/test_data/inference/`.
 
+
+
+
 ### Vein enhancement
 - The reconstructed and ground truth hyperspectral images can be visualized in MATLAB using commands: `load(‘y.mat’);`,`imshow(rad(:,:,1),[]);`
 - The reconstructed band can be enhanced using two enhancement techniques: Contrast Limited Adaptive Histogram Equalization (CLAHE) and Homomorphic Filtering.
 - Enhancement can be produced using file `./vein_enhancement/enhance.m`.
 
-## Citation
-If you use our code or dataset for your research, please cite our paper.
-```
-@inproceedings{10.1145/3339825.3391861,
-author = {Sharma, Neha and Hefeeda, Mohamed},
-title = {Hyperspectral Reconstruction from RGB Images for Vein Visualization},
-year = {2020},
-isbn = {9781450368452},
-publisher = {Association for Computing Machinery},
-address = {New York, NY, USA},
-url = {https://doi.org/10.1145/3339825.3391861},
-doi = {10.1145/3339825.3391861},
-booktitle = {Proceedings of the 11th ACM Multimedia Systems Conference},
-pages = {77–87},
-numpages = {11},
-keywords = {vein visualization, hyperspectral imaging},
-location = {Istanbul, Turkey},
-series = {MMSys ’20}
-}
 
-```
 
