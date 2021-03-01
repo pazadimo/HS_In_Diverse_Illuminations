@@ -1,16 +1,10 @@
 # HS_In_Diverse_Illuminations
-This repository contains Dataset and code for training and testing the deep neural network proposed in:
+This repository contains the dataset and code used for training and testing the deep neural network proposed in:
 **"Enabling Hyperspectral Imaging in Diverse IlluminationConditions for Indoor Applications"**
 
 # Hyperspectral Reconstruction from RGB Images for Vein Visualization
 Hyperspectral imaging provides rich information across many wavelengths of the captured scene, which is useful for many potential applications such as food quality inspection, medical diagnosis, material identification, artwork authentication, and crime scene analysis. However, hyperspectral imaging has not been widely deployed for such indoor applications. In this work, we address one of the main challenges stifling this wide adoption, which is the strict illumination requirements for hyperspectral cameras. Hyperspectral cameras require a light source that radiates power across a wide range of the electromagnetic spectrum. Such light sources are expensive to setup and operate, and in some cases, they are not possible to use because they could damage important objects in the scene. We propose a data-driven method that enables indoor hyperspectral imaging using cost-effective and widely available lighting sources such as LED and fluorescent. These common sources, however, introduce significant noise in the hyperspectral bands in the invisible range, which are the most important for the applications. Our proposed method restores the damaged bands using a carefully-designed supervised deep-learning model. We conduct an extensive experimental study to analyze the performance of the proposed method using real hyperspectral datasets that we have collected. Our results show that the proposed method outperforms the state-of-the-art across all considered objective and subjective metrics, and it produces hyperspectral bands that are close to the ground truth bands captured under ideal illumination conditions.
 
-## Dataset Structure
-- Download link -  https://nsl.cs.sfu.ca/projects/hyperspectral/hyperspectral_data/dataset.zip
-- The dataset consists of paired 207 RGB images with their corresponding hypercubes in total.
-- The hyperspectral images contain 34 bands in spectral range 820-920nm in matlab (`.mat`) format extracted from raw data.
-- The total dataset is having information (images) from 13 participants. 10 participants' data is used for training and remaining 3 participants' data is used for testing/validation.
-- Folder contents: The downloaded folder contains a sub-directory named `veins_t34bands`, further having dataset divided into `train_data`, `valid_data` and `test_data` folders. Each dataset folder is further divided into `mat` and `rgb` folders having hyperspectral and RGB images respectively.
 
 ## Source Code
 ### Prerequisites
