@@ -36,10 +36,9 @@ cd vein-visualization
 
 #### Train Dataset preparation:
 - The model requires 50x50x25 patches sampled in `.h5` from augmented dataset for the training process.
-- You can either use our `.h5` files containg sampled patches or you can sample your own patches and save them `.h5` file.
 - Original Augmented dataset in `.mat` format for the Fruit Processing and Material Identification is available at [Fruit](https://drive.google.com/drive/folders/1BI6J3aJiuqpXMFlNwYt3O0JLP3PHW4zD?usp=sharing) and [Material](https://drive.google.com/drive/folders/1LBvEqoJuQ3o9ryulqWbktEmI3K-g-K_1?usp=sharing)
-- You can should put these two folders in `./train/Data` folder and use `save_h5_data_fruit.m` and `save_h5_data_material.m` for making `.h5` files. However, we recommend you to use our `.h5` files instead of rebuilding them.
-- Training and Validation `.h5` files for the both Fruit Processing and Material Identification categories are available at: [Fruit Processing Training](https://drive.google.com/file/d/1qQGmerp7RU6igRSg7gUWX62EvTj1YYsS/view?usp=sharing), [Fruit Processing Validation](https://drive.google.com/file/d/1EvY3f-Rbm2FYMmw7SWA30pbO4WyTWXqz/view?usp=sharing), [Material Identification Training](https://drive.google.com/file/d/1fhotXS85J7Bt1oH8AHxa4zNt9fon1wJt/view?usp=sharing), and [FMaterial Identification Validation](https://drive.google.com/file/d/1_hZJZIYA2yI0v2WRkpIFpur6ae8ldCup/view?usp=sharing).
+- `save_h5_data_fruit.m` and `save_h5_data_material.m` are used for sampling and constructing `.h5` files. 
+- Training and Validation `.h5` files for the both Fruit Processing and Material Identification categories are available at: [Fruit Processing Training](https://drive.google.com/file/d/1qQGmerp7RU6igRSg7gUWX62EvTj1YYsS/view?usp=sharing), [Fruit Processing Validation](https://drive.google.com/file/d/1EvY3f-Rbm2FYMmw7SWA30pbO4WyTWXqz/view?usp=sharing), [Material Identification Training](https://drive.google.com/file/d/1fhotXS85J7Bt1oH8AHxa4zNt9fon1wJt/view?usp=sharing), and [Material Identification Validation](https://drive.google.com/file/d/1_hZJZIYA2yI0v2WRkpIFpur6ae8ldCup/view?usp=sharing).
 - Move these downloaded `.h5` files to `./train/Data` folder
 
 
@@ -61,24 +60,25 @@ python train_material.py
 - The trained models will be stored in `./train/models/` folder with log files. 
 
 
+### Test
 #### Test Dataset preparation:
-- Test Dataset for Fruit Processing Application is available at: 
-- - Test Dataset for Fruit Processing Application is available at:
+- Test Dataset for Fruit Processing and Material Identification Applications is available at: [Test Data](https://drive.google.com/file/d/1a3R77JJvedsuCH8KoR_m5H_BOaw62fA1/view?usp=sharing)
 
-#### Test the model:
+- Extract `Data.zip` file and transfer `Data` folder into `./test/`. 
+
+#### Test the models:
+- The pre-trained models for both applications are present in `./test/models/`.
+- Test pre-trained model for fruit processing application:
 ```bash
-#!./test/evaluate_model.py
-python evaluate_model.py
+#!./test/evaluate_model_fruit.py
+python evaluate_model_fruit.py
 ```
-- The pre-trained models for both applications are present in `./test/models/`. The model can be evaluated on the testing dataset present in `./dataset/test_data/rgb/`. The test results will be saved to the folder: `./dataset/test_data/inference/`.
+- Test pre-trained model for material identification application:
+```bash
+#!./test/evaluate_model_material.py
+python evaluate_model_material.py
+```
 
-
-
-
-### Vein enhancement
-- The reconstructed and ground truth hyperspectral images can be visualized in MATLAB using commands: `load(‘y.mat’);`,`imshow(rad(:,:,1),[]);`
-- The reconstructed band can be enhanced using two enhancement techniques: Contrast Limited Adaptive Histogram Equalization (CLAHE) and Homomorphic Filtering.
-- Enhancement can be produced using file `./vein_enhancement/enhance.m`.
-
+- Results are available in `./test/Data/Fruit/test_results` and `./test/Data/Material/test_results` in `.mat` format. You can analyze them using matlab.
 
 
