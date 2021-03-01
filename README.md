@@ -73,6 +73,7 @@ python evaluate_model_fruit.py
 python evaluate_model_material.py
 ```
 
-- Results are available in `./test/Data/Fruit/test_results` and `./test/Data/Material/test_results` in `.mat` format. You can analyze them using matlab.
+- By running `evaluate_model_fruit.py` and `evaluate_model_material.py`, you can see MRAE, SAM, and SID for the resulted hyperspectral images of test set. 
+- Resulted Images are available in `./test/Data/Fruit/test_results` and `./test/Data/Material/test_results` in `.mat` format. You can analyze them using matlab.
 
 
