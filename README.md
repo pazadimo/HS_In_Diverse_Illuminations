@@ -1,8 +1,8 @@
 # HS_In_Diverse_Illuminations
 This repository contains the dataset and code used for training and testing the deep neural network proposed in:
-**"Enabling Hyperspectral Imaging in Diverse IlluminationConditions for Indoor Applications"**
+**"Enabling Hyperspectral Imaging in Diverse Illumination Conditions for Indoor Applications"**
 
-# Enabling Hyperspectral Imaging in Diverse IlluminationConditions for Indoor Applications
+# Enabling Hyperspectral Imaging in Diverse Illumination Conditions for Indoor Applications
 Hyperspectral imaging provides rich information across many wavelengths of the captured scene, which is useful for many potential applications such as food quality inspection, medical diagnosis, material identification, artwork authentication, and crime scene analysis. However, hyperspectral imaging has not been widely deployed for such indoor applications. In this work, we address one of the main challenges stifling this wide adoption, which is the strict illumination requirements for hyperspectral cameras. Hyperspectral cameras require a light source that radiates power across a wide range of the electromagnetic spectrum. Such light sources are expensive to setup and operate, and in some cases, they are not possible to use because they could damage important objects in the scene. We propose a data-driven method that enables indoor hyperspectral imaging using cost-effective and widely available lighting sources such as LED and fluorescent. These common sources, however, introduce significant noise in the hyperspectral bands in the invisible range, which are the most important for the applications. Our proposed method restores the damaged bands using a carefully-designed supervised deep-learning model. We conduct an extensive experimental study to analyze the performance of the proposed method using real hyperspectral datasets that we have collected. Our results show that the proposed method outperforms the state-of-the-art across all considered objective and subjective metrics, and it produces hyperspectral bands that are close to the ground truth bands captured under ideal illumination conditions.
 
 
