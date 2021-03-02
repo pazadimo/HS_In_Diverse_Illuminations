@@ -36,7 +36,7 @@ cd HS_In_Diverse_Illuminations
 - Move these downloaded `.h5` files to `./train/Data` folder
 
 
-#### Train the model:
+#### Train the models:
 The training and testing codes are present in `./train/` folder. The model architecture is present in `resblock.py` file.
 - Train a model for the fruit processing application:
 ```bash
