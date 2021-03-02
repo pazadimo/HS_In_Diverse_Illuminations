@@ -58,10 +58,10 @@ python train_material.py
 #### Test Dataset preparation:
 - Test Dataset for Fruit Processing and Material Identification Applications is available at: [Test Data](https://drive.google.com/file/d/1a3R77JJvedsuCH8KoR_m5H_BOaw62fA1/view?usp=sharing)
 
-- Extract `Data.zip` file and transfer `Data` folder into `./test/`. 
+- Extract `Data.zip` file and transfer `Data` folder into `./test/` directory. 
 
 #### Test the models:
-- The pre-trained models for both applications are present in `./test/models/`.
+- The pre-trained models for both applications are present in `./test/models/` folder.
 - Test pre-trained model for fruit processing application:
 ```bash
 #!./test/evaluate_model_fruit.py
