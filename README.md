@@ -29,23 +29,23 @@ cd HS_In_Diverse_Illuminations
 
 
 #### Train Dataset preparation:
-- The model requires 50x50x25 patches sampled in `.h5` from augmented dataset for the training process.
-- Original Augmented dataset in `.mat` format for the Fruit Processing and Material Identification is available at [Fruit](https://drive.google.com/drive/folders/1BI6J3aJiuqpXMFlNwYt3O0JLP3PHW4zD?usp=sharing) and [Material](https://drive.google.com/drive/folders/1LBvEqoJuQ3o9ryulqWbktEmI3K-g-K_1?usp=sharing)
+- The model requires 50x50x25 patches sampled from augmented dataset for the training process stroed in `.h5` format.
+- Original augmented dataset in `.mat` format for the fruit processing and material identification is available at [Fruit](https://drive.google.com/drive/folders/1BI6J3aJiuqpXMFlNwYt3O0JLP3PHW4zD?usp=sharing) and [Material](https://drive.google.com/drive/folders/1LBvEqoJuQ3o9ryulqWbktEmI3K-g-K_1?usp=sharing)
 - `save_h5_data_fruit.m` and `save_h5_data_material.m` are used for sampling and constructing `.h5` files. 
-- Training and Validation `.h5` files for the both Fruit Processing and Material Identification categories are available at: [Fruit Processing Training](https://drive.google.com/file/d/1qQGmerp7RU6igRSg7gUWX62EvTj1YYsS/view?usp=sharing), [Fruit Processing Validation](https://drive.google.com/file/d/1EvY3f-Rbm2FYMmw7SWA30pbO4WyTWXqz/view?usp=sharing), [Material Identification Training](https://drive.google.com/file/d/1fhotXS85J7Bt1oH8AHxa4zNt9fon1wJt/view?usp=sharing), and [Material Identification Validation](https://drive.google.com/file/d/1_hZJZIYA2yI0v2WRkpIFpur6ae8ldCup/view?usp=sharing) sets.
+- Training and Validation `.h5` files for the both fruit processing and material identification categories are available at: [Fruit Processing Training](https://drive.google.com/file/d/1qQGmerp7RU6igRSg7gUWX62EvTj1YYsS/view?usp=sharing), [Fruit Processing Validation](https://drive.google.com/file/d/1EvY3f-Rbm2FYMmw7SWA30pbO4WyTWXqz/view?usp=sharing), [Material Identification Training](https://drive.google.com/file/d/1fhotXS85J7Bt1oH8AHxa4zNt9fon1wJt/view?usp=sharing), and [Material Identification Validation](https://drive.google.com/file/d/1_hZJZIYA2yI0v2WRkpIFpur6ae8ldCup/view?usp=sharing) sets.
 - Move these downloaded `.h5` files to `./train/Data` folder
 
 
 #### Train the model:
 The training and testing codes are present in `./train/` folder. The model architecture is present in `resblock.py` file.
-- Train a model for the Fruit Processing Application:
+- Train a model for the fruit processing application:
 ```bash
 #!./train/train_fruit.py
 python train_fruit.py
 ```
 
 
-- Train a model for the Material Identification Application:
+- Train a model for the material identification application:
 ```bash
 #!./train/train_material.py
 python train_material.py
