@@ -1,0 +1,21 @@
+name: HSIDI
+channels:
+- pytorch
+- conda-forge
+- anaconda
+- defaults
+- peterjc123
+- defaults
+dependencies:
+- python=3.7.7
+- pytorch=1.5.0
+- scipy=1.1.0
+- h5py=2.10.0
+- torchfile=0.1.0=py_0
+- torchvision=0.6.0=py37_cu102
+- pip:
+  - numpy==1.18.1
+  - hdf5storage==0.1.15
+  - Pillow==7.1.2
+  - imageio==2.9.0
+  - pytorch-msssim==0.2.1
