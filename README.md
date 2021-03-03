@@ -22,6 +22,7 @@ cd HS_In_Diverse_Illuminations
 ```
 - Install [PyTorch](http://pytorch.org) and other dependencies.
   - For Conda users, you can create a new Conda environment using `conda env create -f environment.yml`.
+  - Then use `conda activate HSIDI`
 
 
 
