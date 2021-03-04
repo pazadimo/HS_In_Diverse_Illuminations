@@ -76,5 +76,6 @@ python evaluate_model_material.py
 
 - By running `evaluate_model_fruit.py` and `evaluate_model_material.py`, you can see **MRAE, SAM, and SID** metrics for the resulted hyperspectral images of the test sets. 
 - Resulted Images are available in `./test/Data/Fruit/test_results` and `./test/Data/Material/test_results` in `.mat` format. You can analyze them using matlab.
+- For visualizing the inputs, ground truth, and resulted images of the same scenes shown in the paper, run this Matlab file: `./test/visualize.m`. It will visualize bands number 15, 17, 19, 21, and 24 and also saves figures in `.png` format in `./test` directory.
 
 
